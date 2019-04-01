@@ -23,6 +23,15 @@
 * [[MacOSX]]
 * [[Linux]]
 
+To start installation, I have created a gist, that you can download and it would set everything for you:
+
+`curl -Lks https://mquezada.page.link/cfg-install | /bin/bash`
+
+Once that's done you just need to restart the shell (and have zsh already as your default shell), and for vim, run the following:
+
+`:PluginInstall`
+
+
 = Projects =
 1. T-Kubik
 2. [[WORK...WORk...WOrk...Work...work]]
