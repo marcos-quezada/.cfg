@@ -39,3 +39,5 @@ if [ -f ~/.zshrc_local_after ]; then
     source ~/.zshrc_local_after
 fi
 
+# Display system information
+if [ -f /usr/bin/screenfetch ]; then screenfetch; fi
