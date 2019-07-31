@@ -40,4 +40,4 @@ if [ -f ~/.zshrc_local_after ]; then
 fi
 
 # Display system information
-if [ -f /usr/bin/screenfetch ]; then screenfetch; fi
+if [ -f /usr/bin/neofetch ]; then neofetch; fi
