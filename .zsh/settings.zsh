@@ -1,6 +1,6 @@
 # Initialize completion
 autoload -Uz compinit && compinit -i
-zstyle ':completion:*' menu select=4
+zstyle ':completion:*:commands' rehash 1
 zmodload zsh/complist
 
 #Environment Variables

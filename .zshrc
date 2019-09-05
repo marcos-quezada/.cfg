@@ -43,8 +43,9 @@ fi
 if [ -f /usr/bin/neofetch ]; then neofetch; fi
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/home/mquezada/.sdkman"
-[[ -s "/home/mquezada/.sdkman/bin/sdkman-init.sh" ]] && source "/home/mquezada/.sdkman/bin/sdkman-init.sh"
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 #RLS needs RUST_SRC_PATH
 export RUST_SRC_PATH=$HOME/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src
+
