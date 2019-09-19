@@ -6,6 +6,9 @@ zmodload zsh/complist
 #Environment Variables
 ORIENTDB_HOME=/Users/mquezada/Development/orientdb-community-2.2.33/
 export ORIENTDB_HOME
+JETBRAINS_HOME=$HOME/.local/share/JetBrains/Toolbox/bin/
+path+=($JETBRAINS_HOME)
+export PATH
 
 # Nicer history
 HISTSIZE=1048576

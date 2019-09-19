@@ -113,6 +113,9 @@ if &term =~ '^screen'
     " tmux knows the extended mouse mode
     set ttymouse=xterm2
 endif
+"Enable clipboard
+set clipboard=unnamed
+set clipboard=unnamedplus
 
 "---------------------
 " Plugin configuration
