@@ -49,6 +49,10 @@ export SDKMAN_DIR="$HOME/.sdkman"
 #RLS needs RUST_SRC_PATH
 export RUST_SRC_PATH=$HOME/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src
 
+#Environment variables for ruby
+export PATH=$HOME/.rbenv/bin:$PATH
+eval "$(rbenv init -)"
+
 #NVM initialisation
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
