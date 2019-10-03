@@ -35,4 +35,17 @@ mcd() {
 }
 
 alias zshconfig="vim ~/.zshrc"
-alias vimnotes="vim -f --servername Notes -u ~/.vim/notes.vim"
+
+# Starts on desired wiki or default if no argument is provided.
+vimnotes() {
+    if [ $# -eq 0 ]; then
+        vim -f --servername Notes -u ~/.vim/notes.vim -c VimwikiIndex
+    else
+        if [[ $1 =~ ^[0-9]{1,2}$ ]]; then
+           vim -f --servername Notes -u ~/.vim/notes.vim -c "execute 'normal ${1}\\ww'"
+        else
+            echo "Invalid wiki index"
+            return
+        fi
+    fi
+}

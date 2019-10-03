@@ -39,6 +39,7 @@ filetype plugin indent on    " required
 "------------------
 syntax on " turn on syntax highlighting
 set showmatch " show matching braces when text indicator is over them
+set showcmd " show visual feedback for <leader>
 
 " highlight current line, but only in active window
 augroup CursorLineOnlyInActiveWindow
