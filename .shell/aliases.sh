@@ -35,6 +35,7 @@ mcd() {
 }
 
 alias zshconfig="vim ~/.zshrc"
+alias sdkjava8="sdk use java 8.0.202-zulufx"
 
 # Starts on desired wiki or default if no argument is provided.
 vimnotes() {
