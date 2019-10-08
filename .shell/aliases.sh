@@ -22,4 +22,4 @@ alias grep='grep --color'
 alias cp='cp -i'
 alias mv='mv -i'
 alias zshconfig="vim ~/.zshrc"
-alias sdkjava8="sdk use java 8.0.202-zulufx"
+alias sdkjava8="sdk use java 8.0.222-zulu"
