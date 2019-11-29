@@ -34,6 +34,11 @@ source ~/.zsh/prompt.zsh
 # External plugins (initialized after)
 source ~/.zsh/plugins_after.zsh
 
+# Nix package manager initialization
+if [ -f ~/.shell/nix.sh ]; then
+    source ~/.shell/nix.sh
+fi
+
 # Allow local customizations in the ~/.zshrc_local_after file
 if [ -f ~/.zshrc_local_after ]; then
     source ~/.zshrc_local_after
@@ -61,4 +66,10 @@ eval "$(rbenv init -)"
 #NVM initialisation
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
+#z - jump around initialization
+export _Z_CMD="j"
+if [ -f ~/.shell/z.sh ]; then
+    source ~/.shell/z.sh
+fi
 

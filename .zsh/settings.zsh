@@ -1,7 +1,9 @@
 # Initialize completion
 autoload -Uz compinit && compinit -i
+autoload -U +X bashcompinit && bashcompinit
 zstyle ':completion:*:commands' rehash 1
 zmodload zsh/complist
+complete -W "$(tldr 2>/dev/null --list)" tldr
 
 #Environment Variables
 ORIENTDB_HOME=/Users/mquezada/Development/orientdb-community-2.2.33/
