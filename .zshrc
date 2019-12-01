@@ -73,3 +73,6 @@ if [ -f ~/.shell/z.sh ]; then
     source ~/.shell/z.sh
 fi
 
+# colorize man page with bat
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+
