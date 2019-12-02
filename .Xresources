@@ -56,6 +56,12 @@ URxvt.perl-ext-common:      default,matcher
 URxvt.matcher.button:       1
 URxvt.urlLauncher:          firefox
 
+! Remap default copy & paste keybinding
+URxvt.keysym.M-v:           eval:paste_clipboard
+URxvt.keysym.M-c:           eval:selection_to_clipboard
+URxvt.keysym.C-M-c:         builtin-string:
+URxvt.keysym.C-M-v:         builtin-string:
+
 ! Cursor
 URxvt.cursorBlink:          true
 URxvt.cursorColor:          #49B9C7
