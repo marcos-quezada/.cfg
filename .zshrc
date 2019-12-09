@@ -45,7 +45,9 @@ if [ -f ~/.zshrc_local_after ]; then
 fi
 
 # Display system information
-if [ -f /usr/bin/neofetch ]; then neofetch; fi
+if [ -f /usr/bin/neofetch ] && [ -z ${TMUX} ]; then 
+    neofetch;
+fi
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
