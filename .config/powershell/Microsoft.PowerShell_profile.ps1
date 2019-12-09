@@ -1,7 +1,9 @@
 . $PSScriptRoot\SolarizedColors.ps1
 
-function prompt {
-    $origLastExitCode = $LastExitCode
+$PersonalPromptScriptBlock =  {
+    $origDollarQuestion = $Global:?
+    $origLastExitCode = $Global:LASTEXITCODE
+
     $prompt = " "
     
     $curPath = $ExecutionContext.SessionState.Path.CurrentLocation.Path
@@ -24,13 +26,21 @@ function prompt {
     }
 
     $prompt += Write-Prompt "$(if ($PsDebugContext) {' [DBG]: '} else {''})" -ForegroundColor Magenta
-    $prompt += "`n$('❯' * ($nestedPromptLevel + 1)) "
+    $prompt += Set-Newline
 
-    $LastExitCode = $origLastExitCode
+    if($origDollarQuestion){
+        $prompt += Write-Prompt "❯" -ForegroundColor DarkCyan
+    } else {
+        $prompt += Write-Prompt "❯" -ForegroundColor Red
+    }
+
+    $global:LASTEXITCODE = $origLastExitCode
     $prompt
 }
 
 Import-Module posh-git
 Import-Module ZLocation
+
+Set-Item Function:\prompt -Value $PersonalPromptScriptBlock
 
 $Host.UI.RawUI.WindowTitle = (Get-Date).ToString()
