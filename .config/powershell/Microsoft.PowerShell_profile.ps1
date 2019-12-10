@@ -1,11 +1,13 @@
 . $PSScriptRoot\SolarizedColors.ps1
 
 $PersonalPromptScriptBlock =  {
-    $origDollarQuestion = $Global:?
-    $origLastExitCode = $Global:LASTEXITCODE
-
-    $prompt = " "
+    $OrigDollarQuestion = $Global:?
+    $OrigLastExitCode = $Global:LASTEXITCODE
+    $OrigLastCmd = Get-History -Count 1
+    $ExecutionTimeLastCmd = FormatDuration($OrigLastCmd.EndExecutionTime - $OrigLastCmd.StartExecutionTime)
     
+    $prompt = ' '
+
     $curPath = $ExecutionContext.SessionState.Path.CurrentLocation.Path
     if ($curPath.ToLower().StartsWith($Home.ToLower()))
     {
@@ -26,16 +28,48 @@ $PersonalPromptScriptBlock =  {
     }
 
     $prompt += Write-Prompt "$(if ($PsDebugContext) {' [DBG]: '} else {''})" -ForegroundColor Magenta
+    
+    $prompt += Write-Prompt $TotalTimeForCmdExec
+
+    if(![string]::IsNullOrEmpty($ExecutionTimeLastCmd)){
+        $prompt += Write-Prompt " took" -ForegroundColor White
+        $prompt += Write-Prompt $ExecutionTimeLastCmd -ForegroundColor DarkYellow
+    }
+    
     $prompt += Set-Newline
 
-    if($origDollarQuestion){
+    if($OrigDollarQuestion){
         $prompt += Write-Prompt "❯" -ForegroundColor DarkCyan
     } else {
         $prompt += Write-Prompt "❯" -ForegroundColor Red
     }
-
-    $global:LASTEXITCODE = $origLastExitCode
+       
+    $global:LASTEXITCODE = $OrigLastExitCode
     $prompt
+}
+
+Function FormatDuration ([TimeSpan]$Duration) {
+    $d = $Duration.Days
+    $h = $Duration.Hours
+    $m = $Duration.Minutes
+    $s = $Duration.Seconds
+
+    $DurationStr = ''
+
+    if($d -ge 1){
+        $DurationStr += ' {0}d' -f $d  
+    }
+    if($h -ge 1){
+        $DurationStr += ' {0}h' -f $h
+    }
+    if($m -ge 1){
+        $DurationStr += ' {0}m' -f $m
+    }
+    if($s -ge 1){
+        $DurationStr += ' {0}s' -f $s
+    }
+
+    return $DurationStr
 }
 
 Import-Module posh-git
