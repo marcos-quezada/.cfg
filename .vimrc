@@ -1,5 +1,3 @@
-"set nocompatible
-
 "---------------------
 " Load Plugins (Vundle)
 "---------------------
