@@ -75,6 +75,11 @@ if [ -f ~/.shell/z.sh ]; then
     source ~/.shell/z.sh
 fi
 
+# Python environment management tool
+export PATH="/home/mquezada/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
 # colorize man page with bat
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
