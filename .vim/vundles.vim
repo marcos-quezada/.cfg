@@ -23,10 +23,12 @@ Plugin 'https://github.com/elzr/vim-json.git'
 Plugin 'https://github.com/groenewege/vim-less.git'
 Plugin 'https://github.com/tpope/vim-markdown.git'
 Plugin 'https://github.com/vimwiki/vimwiki.git'
-Plugin 'https://github.com/PProvost/vim-ps1.git'
+Plugin 'https://github.com/zigford/vim-powershell.git'
+Plugin 'https://github.com/jiangmiao/auto-pairs.git'
+Plugin 'https://github.com/tpope/vim-commentary.git'
+Plugin 'https://github.com/dense-analysis/ale.git'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
-
 
