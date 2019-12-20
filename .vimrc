@@ -1,17 +1,27 @@
 "---------------------
-" Load Plugins (Vundle)
+" Vundle initialization
 "---------------------
-source $HOME/.vim/vundles.vim
+source $HOME/.vim/init.vimrc
 
 "---------------------
-" Basic Configuration
-" --------------------
-source $HOME/.vim/basic.vim
+" General not fitting somewhere else
+"---------------------
+source $HOME/.vim/general.vimrc
 
 "---------------------
 " Plugins configuration
 "---------------------
-source $HOME/.vim/plugins.vim
+source $HOME/.vim/plugins.vimrc
+
+"---------------------
+" Keys bindings
+"---------------------
+source $HOME/.vim/keys.vimrc
+
+"---------------------
+" Statusline configuration
+"---------------------
+source $HOME/.vim/line.vimrc
 
 "---------------------
 " Local customizations
