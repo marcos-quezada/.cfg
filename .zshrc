@@ -83,3 +83,7 @@ eval "$(pyenv virtualenv-init -)"
 # colorize man page with bat
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
+# Go Paths
+export GOPATH=$HOME/work
+export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
+
